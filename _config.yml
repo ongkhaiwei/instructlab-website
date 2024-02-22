@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Cause Template
-url: https://clean-oryx.cloudvent.net
+title: Woof
+url: https://mairin.github.io/woof
 baseurl:
 google_analytics_key:
 
@@ -14,9 +14,9 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Cause Template
+  name: Woof
   links:
-    - https://github.com/CloudCannon/cause-jekyll-template
+    - https://github.com/mairin/woof
 
 # -----
 # Build
