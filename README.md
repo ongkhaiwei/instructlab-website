@@ -1,3 +1,13 @@
+# Website
+
+This is a work-in-progress website for the public project github page. It has some filler name / artwork for now. PRs quite welcome.
+**Máirín Duffy** is working on this aiming to have something a bit more polished for public consumption for **1 March 2024.**
+
+Note that gh-pages requires a repo to be public unless you have a paid org account. This is not a paid org account, and **this repo should stay private.** The base theme without any mods has been tested to work fine in gh-pages in a public repo.
+
+# // Upstream theme README Below:
+
+
 # Cause
 
 Not for profit themed template for Jekyll. Browse through a [live demo](https://clean-oryx.cloudvent.net/).
