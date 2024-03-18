@@ -1,0 +1,14 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+
+  @include breakpoint(md) {
+    height: 100vh;
+  }
+}

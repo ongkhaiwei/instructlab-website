@@ -1,0 +1,64 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+@use '@carbon/type' as *;
+@use '@carbon/colors' as *;
+@use "@carbon/react/scss/theme" as *;
+@use '../../styles/type.scss' as *;
+
+.pane {
+  background-color: $background-brand;
+  color: white;
+
+  .content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    &__header {
+      margin-bottom: 32px;
+  
+      @include breakpoint(lg) {
+        margin-bottom: 48px;
+      }
+    }
+  
+    &__subhead {
+      position: relative;
+    }
+  
+    .action {
+      margin-top: 32px;
+      width: calc(50% + $grid-gutter / 2);
+      min-width: 20rem;
+  
+      @include breakpoint(lg) {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  .graphicsWrapper {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+    }
+
+    .graphics {
+      transform: scale(0.6);
+  
+      @include breakpoint(lg) {
+        transform: scale(0.8);
+      }
+      
+      @include breakpoint(xlg) {
+        transform: scale(1);
+      }
+    }
+  }
+}

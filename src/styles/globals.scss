@@ -1,0 +1,100 @@
+@use '@carbon/react' as *;
+@use '@carbon/themes/scss/themes' as *;
+@use '@carbon/themes';
+@use '@carbon/styles/scss/breakpoint' as *;
+
+:root {
+  @include themes.theme($white, (
+    text-primary: black,
+    border-inverse: black,
+    background-brand: #5A00FF
+  ));
+
+  --light-gray: #F2F4F8;
+  --brand-green: #51FFC4;
+  --brand-dark-green: #007D79;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-snap-type: y proximity;
+
+  @include breakpoint-down(md) {
+    scroll-snap-type: none;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  @include type-style('fluid-display-04', true);
+
+  @include breakpoint(lg) {
+    font-size: 92px;
+    line-height: 102px;
+  }
+}
+
+h2 {
+  @include type-style('heading-06', true);
+  margin-bottom: 32px;
+}
+
+p {
+  @include type-style('heading-03', true);
+}
+
+.cds--btn {
+  height: 48px;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+
+  svg {
+    margin-left: 24px;
+  }
+
+  &.cds--btn--primary {
+    background-color: $white-0;
+    color: $black-100;
+    transition: opacity 0.1s ease-in-out;
+
+    svg {
+      fill: $black-100;
+    }
+
+    &:focus {
+      border-color: $white-0;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      box-shadow:
+        inset 0 0 0 1px $white-0,
+        inset 0 0 0 2px $black-100;
+      border-color: $white-0;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

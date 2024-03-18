@@ -1,0 +1,15 @@
+.cubeWrapper {
+  position: relative;
+  width: 341px;
+  height: 576px;
+
+  svg {
+    position: absolute;
+  }
+
+  .detachedCube {
+    position: absolute;
+    left: -7px;
+    z-index: 1;
+  }
+}

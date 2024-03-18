@@ -1,0 +1,38 @@
+@use '@carbon/colors' as *;
+
+.matrix {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 1;
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% / 8);
+    border-top: solid 1px $white-0;
+    &:last-child {
+      border-bottom: solid 1px $white-0;
+    }
+
+    .cell {
+      box-sizing: border-box;
+      width: calc(100% / 8);
+      height: 100%;
+      border-left: solid 1px $white-0;
+      transition: background-color 2.5s;
+
+      &:last-child {
+        border-right: solid 1px $white-0;
+      }
+
+      &__dark {
+        background-color: var(--brand-dark-green);
+      }
+
+      &__light {
+        background-color: var(--brand-green);
+      }
+    }
+  }
+}

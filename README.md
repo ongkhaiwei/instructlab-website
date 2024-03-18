@@ -1,91 +1,41 @@
-# Website
+# instructlab
+InstructLAB website
 
-This is a work-in-progress website for the public project github page. It has some filler name / artwork for now. PRs quite welcome.
-**Máirín Duffy** is working on this aiming to have something a bit more polished for public consumption for **1 March 2024.**
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Note that gh-pages requires a repo to be public unless you have a paid org account. This is not a paid org account, and **this repo should stay private.** The base theme without any mods has been tested to work fine in gh-pages in a public repo.
+## Getting Started
 
-# // Upstream theme README Below:
+First, run the development server:
 
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-# Cause
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Not for profit themed template for Jekyll. Browse through a [live demo](https://clean-oryx.cloudvent.net/).
-Increase the web presence of a not for profit or cause website with this configurable theme.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-![Cause](images/_screenshot.jpg)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-CloudCannon was made by [CloudCannon](http://cloudcannon.com/), the Cloud CMS for Jekyll.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Find more templates, themes and step-by-step Jekyll tutorials at [CloudCannon Academy](https://learn.cloudcannon.com/).
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/cause-jekyll-template)
+## Learn More
 
-## Features
+To learn more about Next.js, take a look at the following resources:
 
-* Pre-built pages
-* Pre-styled components
-* Configurable footer
-* Optimised for editing in [CloudCannon](http://cloudcannon.com/)
-* SEO tags
-* Google Analytics
-* [Donorbox](https://donorbox.org/)
-* [MailChimp](https://mailchimp.com/)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Setup
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-1. Add your site details in `_config.yml`.
-2. Add your Google Analytics to `_config.yml`.
-3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or Jekyll locally).
+## Deploy on Vercel
 
-## Develop
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Cause was built with [Jekyll](http://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
-
-Install the dependencies with [Bundler](http://bundler.io/):
-
-~~~bash
-$ bundle install
-~~~
-
-Run `jekyll` commands through Bundler to ensure you're using the right versions:
-
-~~~bash
-$ bundle exec jekyll serve
-~~~
-
-## Editing
-
-Cause is already optimised for updating pages, company details and footer elements in CloudCannon.
-
-## SEO Tag
-
-This site uses the [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin. You should at least set a title in front matter on each page. Have a look at the [project page](https://github.com/jekyll/jekyll-seo-tag) for more options.
-
-## Google Analytics
-
-[Google Analytics](https://www.google.com/analytics/) is a third party website analytics tool. To install:
-1. Add your Google Analytics key to `_config.yml`
-2. Run your site in production `JEKYLL_ENV=production`. This is the default in CloudCannon and GitHub Pages.
-
-## Donorbox
-
-[Donorbox](https://donorbox.org/) is a third party embeddable donation form for websites. To install:
-
-1. Set up a campaign on Donorbox
-2. Copy the embed code from the Dashboard screen
-3. Paste it into `donation_embed` in `_config.yml`
-
-## Mailchimp
-
-[Mailchimp](https://mailchimp.com/) is a third party embeddable newsletter for websites. To install:
-
-1. Set up a campaign on Mailchimp
-2. Find the embed code for the sign up form
-3. Copy the `<form>`'s action url
-4. Paste it into `newsletter_action` in `_config.yml`
-
-### Company details
-
-* Reused around the site to save multiple editing locations.
-* Set in the *Data* / *Company* section.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

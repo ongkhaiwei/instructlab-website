@@ -1,0 +1,78 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+@use '@carbon/type' as *;
+@use '@carbon/colors' as *;
+@use "@carbon/react/scss/theme" as *;
+@use '../../styles/type.scss' as *;
+
+.pane {
+  background-color: $black-100;
+  color: $white-0;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    height: 100vh;
+  }
+
+  .grid {
+    margin: auto;
+    flex: 1;
+
+    .graphics {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 0;
+      grid-column-start: 2;
+      
+      @include breakpoint(md) {
+        padding: 6rem 2rem;
+        grid-column-start: 1;
+      }
+
+      @include breakpoint(lg) {
+        grid-column-start: 2;
+      }
+    }
+
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 6rem;
+      
+      @include breakpoint(md) {
+        padding-bottom: unset;
+      }
+
+      &__header {
+        margin-bottom: 32px;
+    
+        @include breakpoint(lg) {
+          margin-bottom: 48px;
+        }
+      }
+    
+      &__subhead {
+        position: relative;
+      }
+    
+      .action {
+        margin-top: 32px;
+        min-width: calc(60% + $grid-gutter);
+    
+        @include breakpoint(lg) {
+          margin-top: 48px;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 42px 0;
+    background-color: var(--brand-green);
+    color: $text-primary;
+  }
+}
