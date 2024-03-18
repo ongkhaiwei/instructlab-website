@@ -21,8 +21,6 @@ const modelStack_0 = '/assets/model-stack/layer_0.svg';
 const modelStack_1 = '/assets/model-stack/layer_1.svg';
 const modelStack_2 = '/assets/model-stack/layer_2.svg';
 
-import styles from './InfographicAnimation.module.scss';
-
 export const infographicList = {
   taxonomy: {
     originalWidth: 512,
