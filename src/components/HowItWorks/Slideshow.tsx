@@ -140,7 +140,7 @@ const Slideshow: FC<SlideshowProps> = () => {
         ) : null}
 
         <div className={styles.slideshow}>
-          <h2>How it works?</h2>
+          <h2>How it works</h2>
           <div className={styles.slideshow__slides}>
             <div className={styles.cardWrapper}>
               {steps.map((d, i) => (
