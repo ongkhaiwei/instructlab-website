@@ -1,15 +1,21 @@
 import { FC } from 'react';
-import { Button, Column, Grid } from '@carbon/react';
+import { Column, Grid, Link } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Cube from './graphics/Cube';
+import GitHub from './graphics/github.svg';
+import HuggingFace from './graphics/hf.svg';
 
 import styles from './Leadspace.module.scss';
 
 type LeadspaceProps = {
-  onCtaClicked: () => void;
+  onJoinCommunity: () => void;
+  onCheckLatestModel: () => void;
 };
 
-const Leadspace: FC<LeadspaceProps> = ({ onCtaClicked }) => (
+const Leadspace: FC<LeadspaceProps> = ({
+  onJoinCommunity,
+  onCheckLatestModel,
+}) => (
   <section className={styles.pane}>
     <Grid>
       <Column
@@ -24,9 +30,16 @@ const Leadspace: FC<LeadspaceProps> = ({ onCtaClicked }) => (
           InstructLab is an open source project designed to change how LLMs are
           developed
         </p>
-        <Button className={styles.action} onClick={onCtaClicked}>
-          <label>Join the community</label> <ArrowRight />
-        </Button>
+        <Link className={styles.action} onClick={onJoinCommunity}>
+          <GitHub className={styles.icon} />
+          <label>Join the community</label>
+          <ArrowRight />
+        </Link>
+        <Link className={styles.action} onClick={onCheckLatestModel}>
+          <HuggingFace className={styles.icon} />
+          <label>Check out the latest model</label>
+          <ArrowRight />
+        </Link>
       </Column>
       <Column
         className={styles.graphicsWrapper}

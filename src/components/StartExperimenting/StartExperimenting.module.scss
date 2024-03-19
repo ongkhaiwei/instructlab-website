@@ -61,7 +61,8 @@
     
       .action {
         margin-top: 32px;
-        min-width: calc(60% + $grid-gutter);
+        width: calc(60% + $grid-gutter);
+        max-width: 272px;
     
         @include breakpoint(lg) {
           margin-top: 48px;

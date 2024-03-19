@@ -9,7 +9,11 @@ import StartExperimenting from '../components/StartExperimenting/StartExperiment
 import styles from '../styles/main.module.scss';
 
 export default function Home() {
-  const handleLeadspceCtaClick = useCallback(() => {
+  const handleJoinCommunity = useCallback(() => {
+    // TODO
+  }, []);
+
+  const handleCheckLatestModel = useCallback(() => {
     // TODO
   }, []);
 
@@ -30,7 +34,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <PageShell>
-          <Leadspace onCtaClicked={handleLeadspceCtaClick} />
+          <Leadspace
+            onJoinCommunity={handleJoinCommunity}
+            onCheckLatestModel={handleCheckLatestModel}
+          />
           <ReleaseCycle />
           <HowItWorks />
           <StartExperimenting onCtaClicked={handleStartExperimentingCtaClick} />
