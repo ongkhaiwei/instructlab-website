@@ -3,6 +3,7 @@
 const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   compiler: {
     // Enables the styled-components SWC transform
