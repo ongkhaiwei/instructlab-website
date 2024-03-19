@@ -27,8 +27,7 @@ const Leadspace: FC<LeadspaceProps> = ({
       >
         <h1 className={styles.content__header}>InstructLab</h1>
         <p className={styles.content__subhead}>
-          InstructLab is an open source project designed to change how LLMs are
-          developed
+        An new community-based approach to build truly open-source LLMs
         </p>
         <Link className={styles.action} onClick={onJoinCommunity}>
           <GitHub className={styles.icon} />

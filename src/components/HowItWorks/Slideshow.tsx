@@ -27,24 +27,25 @@ const steps = [
     animationSize: 400,
     animationName: 'detect-gap',
     description:
-      'Identifies skill and knowledge gaps in current model performance',
+      'Experiment locally, on a quantized version of the latest InstructLab model, with adding new knowledge and skills.',
   },
   {
     animationSize: 450,
     animationName: 'taxonomy',
-    description: 'Define a taxonomy that describes a given gap',
+    description:
+      'Once a synthetic data recipe is ready, submit a pull request to contribute back to the InstructLab repository, which is organized in a structured taxonomy.',
   },
   {
     animationSize: 320,
     animationName: 'synthetic-data',
     description:
-      'Systematically generate synthetic data that covers all elements of the defined taxonomy',
+      'InstructLab uses the new recipes to systematically generate synthetic data for the new capabilities - and this data is released to the community.',
   },
   {
     animationSize: 400,
     animationName: 'fine-tune',
     description:
-      'Fine-tune the model with the generated synthetic data to teach it the new skill',
+      'InstructLab merges the new skill back into the base model by updating it using all synthetic data generated to date, and releases a new model version to the community.',
   },
 ];
 
