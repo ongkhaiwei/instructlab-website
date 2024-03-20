@@ -55,6 +55,7 @@ h2 {
 
 p {
   @include type-style('heading-03', true);
+  margin-bottom: 24px;
 }
 
 .cds--btn {

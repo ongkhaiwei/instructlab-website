@@ -58,12 +58,12 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
       >
         <h2 className={styles.content__header}>Join the community</h2>
         <p className={styles.content__subhead}>
-          Downloading the CLI and experimenting with new skills and knowledge is
-          a great way to get involved. You can also contribute synthetic data
-          directly.
+          Downloading the Lab CLI and experimenting with adding new skills and
+          knowledge is a great way to get started. You can also get involved by
+          contributing new skills, knowledge, or synthetic data directly.
         </p>
         <Button className={styles.action} onClick={onCtaClicked}>
-          <label>Join</label> <ArrowRight />
+          <label>Join the community</label> <ArrowRight />
         </Button>
       </Column>
     </Grid>
