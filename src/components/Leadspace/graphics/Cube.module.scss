@@ -5,11 +5,6 @@
 
   svg {
     position: absolute;
-  }
-
-  .detachedCube {
-    position: absolute;
-    left: -7px;
-    z-index: 1;
+    overflow: visible;
   }
 }
