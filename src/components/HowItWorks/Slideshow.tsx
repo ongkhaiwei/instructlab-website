@@ -26,26 +26,45 @@ const steps = [
   {
     animationSize: 400,
     animationName: 'detect-gap',
-    description:
-      'Experiment locally, on a quantized version of the latest InstructLab model, with adding new knowledge and skills.',
+    description: (
+      <>
+        Experiment locally, on a quantized version of the latest InstructLab
+        model, with adding new <strong>knowledge and skills</strong>
+      </>
+    ),
   },
   {
     animationSize: 450,
     animationName: 'taxonomy',
-    description:
-      'Once a synthetic data recipe is ready, submit a pull request to contribute back to the InstructLab repository, which is organized in a structured taxonomy.',
+    description: (
+      <>
+        Once a synthetic data recipe is ready, submit a pull request to
+        contribute back to the InstructLab repository, which is organized in a
+        structured <strong>taxonomy</strong>
+      </>
+    ),
   },
   {
     animationSize: 320,
     animationName: 'synthetic-data',
-    description:
-      'InstructLab uses the new recipes to systematically generate synthetic data for the new capabilities - and this data is released to the community.',
+    description: (
+      <>
+        InstructLab uses the new recipes to systematically generate{' '}
+        <strong>synthetic data</strong> for the new capabilities - and this data
+        is released to the community
+      </>
+    ),
   },
   {
     animationSize: 400,
     animationName: 'fine-tune',
-    description:
-      'InstructLab merges the new skill back into the base model by updating it using all synthetic data generated to date, and releases a new model version to the community.',
+    description: (
+      <>
+        InstructLab <strong>merges</strong> the new skill back into the base
+        model by updating it using all synthetic data generated to date, and
+        releases a new model version to the community
+      </>
+    ),
   },
 ];
 
