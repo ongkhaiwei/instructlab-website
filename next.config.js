@@ -6,14 +6,6 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
 
-  // GitHub pages
-  rewrites: () => [
-    {
-      source: '/website',
-      destination: '/',
-    },
-  ],
-
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
