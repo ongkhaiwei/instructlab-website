@@ -251,7 +251,7 @@ const ReleaseCycleDiagram: FC = () => {
             height="60"
             transform="translate(465 352)"
             fill="white"
-            fill-opacity="0.01"
+            fillOpacity="0.01"
             style={{ mixBlendMode: 'multiply' }}
           />
           <path
@@ -268,7 +268,7 @@ const ReleaseCycleDiagram: FC = () => {
             height="62"
             transform="translate(33 351)"
             fill="white"
-            fill-opacity="0.01"
+            fillOpacity="0.01"
             style={{ mixBlendMode: 'multiply' }}
           />
           <path
