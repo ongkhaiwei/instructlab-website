@@ -15,7 +15,9 @@ import {
   useState,
 } from 'react';
 import DebugAnimationContext from './utils/DebugAnimationContext';
-import InfographicAnimation from './InfographicAnimation';
+import InfographicAnimation, {
+  InfographicAnimationProps,
+} from './InfographicAnimation';
 import classNames from 'classnames';
 
 import styles from './Slideshow.module.scss';
@@ -173,7 +175,9 @@ const Slideshow: FC<SlideshowProps> = () => {
                   <div className={styles.animWrapper}>
                     <InfographicAnimation
                       size={d.animationSize}
-                      kind={d.animationName}
+                      kind={
+                        d.animationName as InfographicAnimationProps['kind']
+                      }
                       isOn={currentSlide === i}
                     />
                   </div>

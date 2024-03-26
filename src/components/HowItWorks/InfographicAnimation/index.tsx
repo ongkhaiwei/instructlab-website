@@ -1,13 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import { FC, Fragment, useEffect, useState } from 'react';
 import { infographicList } from './constant';
 
 import styles from './InfographicAnimation.module.scss';
 
+type Layer = any; // eslint-disable-line
+
 const getPos = (
   //get position of the layer
-  dir,
-  layer,
-  originalSize,
+  dir: string,
+  layer: Layer,
+  originalSize: number[],
   val = undefined,
 ) => {
   const idx = dir === 'top' ? 1 : 0;
@@ -15,18 +17,23 @@ const getPos = (
   return pos === 0 ? '0' : `${(pos / originalSize[idx]) * 100}%`;
 };
 
-const LayerImg = ({ layer, size, originalSize, isAnimOn }) => {
+const LayerImg: FC<{
+  layer: Layer; // eslint-disable-line
+  size: number;
+  originalSize: number[];
+  isAnimOn: boolean;
+}> = ({ layer, size, originalSize, isAnimOn }) => {
   const [targetStyle, setTargetStyle] = useState({});
-  const [animList, setAnimList] = useState(null);
-  const layerImg = layer.img;
+  const [animList, setAnimList] = useState<any[] | null>(null); // eslint-disable-line
+  const Img = layer.img;
 
-  const resetAnimation = (left, top, width) => {
+  const resetAnimation = (left: string, top: string, width: string) => {
     setTargetStyle({ left: left, top: top, width: width });
     animList?.map(d => clearTimeout(d));
     setAnimList(null);
   };
 
-  const setAnimation = (left, top, width) => {
+  const setAnimation = (left: string, top: string, width: string) => {
     if (layer.animation) {
       setTargetStyle({
         ...layer.animation[0], //base style to create transition
@@ -85,19 +92,28 @@ const LayerImg = ({ layer, size, originalSize, isAnimOn }) => {
   }, [animList]);
 
   return (
-    <img
+    <Img
       alt=""
       className={`${styles.animLayer} ${
         isAnimOn && layer.class ? layer.class : ''
       }`}
-      src={layerImg}
       style={targetStyle}
     />
   );
 };
 
-const InfographicAnimation = ({ size, kind, isOn = true }) => {
-  const [animList, setAnimList] = useState(null);
+export type InfographicAnimationProps = {
+  size: number;
+  kind: keyof typeof infographicList;
+  isOn?: boolean;
+};
+
+const InfographicAnimation: FC<InfographicAnimationProps> = ({
+  size,
+  kind,
+  isOn = true,
+}) => {
+  const [animList, setAnimList] = useState<any>(null); // eslint-disable-line
   const [isAnimOn, setIsAnimOn] = useState(false);
   const [animWidth, setAnimWidth] = useState(size);
 
@@ -119,7 +135,7 @@ const InfographicAnimation = ({ size, kind, isOn = true }) => {
         setAnimWidth(size);
       }
 
-      setAnimList(() => ({ ...infographicList[kind] }));
+      setAnimList(() => ({ ...infographicList[kind] }) as any); // eslint-disable-line
       resetAnim();
     }
   }, [kind, size]);
@@ -146,7 +162,7 @@ const InfographicAnimation = ({ size, kind, isOn = true }) => {
           className={styles.animation}
           style={{ width: `${animWidth}px`, aspectRatio: animList.ratio }}
         >
-          {animList.layers.map((d, i) => (
+          {animList.layers.map((d: Layer, i: number) => (
             <Fragment key={`anim_${kind}_${i}`}>
               <LayerImg
                 layer={d}

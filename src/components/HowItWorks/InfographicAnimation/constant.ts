@@ -1,25 +1,25 @@
-const taxonomy_0 = '/assets/taxonomy/layer_0.svg';
-const taxonomy_0_1 = '/assets/taxonomy/layer_0_1.svg';
-const taxonomy_1 = '/assets/taxonomy/layer_1.svg';
-const taxonomy_1_1 = '/assets/taxonomy/layer_1_1.svg';
-const taxonomy_2 = '/assets/taxonomy/layer_2.svg';
-const taxonomy_2_0 = '/assets/taxonomy/layer_2_0.svg';
-const taxonomy_3 = '/assets/taxonomy/layer_3.svg';
-const taxonomy_3_0 = '/assets/taxonomy/layer_3_0.svg';
+import taxonomy_0 from './assets/taxonomy/layer_0.svg';
+import taxonomy_0_1 from './assets/taxonomy/layer_0_1.svg';
+import taxonomy_1 from './assets/taxonomy/layer_1.svg';
+import taxonomy_1_1 from './assets/taxonomy/layer_1_1.svg';
+import taxonomy_2 from './assets/taxonomy/layer_2.svg';
+import taxonomy_2_0 from './assets/taxonomy/layer_2_0.svg';
+import taxonomy_3 from './assets/taxonomy/layer_3.svg';
+import taxonomy_3_0 from './assets/taxonomy/layer_3_0.svg';
 
-const detectGap_0 = '/assets/detect-gap/layer_0.svg';
-const detectGap_1 = '/assets/detect-gap/layer_1.svg';
-const detectGap_2 = '/assets/detect-gap/layer_2.svg';
-const detectGap_4 = '/assets/detect-gap/layer_4.svg';
-const detectGap_5 = '/assets/detect-gap/layer_5.svg';
-const detectGap_6 = '/assets/detect-gap/layer_6.svg';
+import detectGap_0 from './assets/detect-gap/layer_0.svg';
+import detectGap_1 from './assets/detect-gap/layer_1.svg';
+import detectGap_2 from './assets/detect-gap/layer_2.svg';
+import detectGap_4 from './assets/detect-gap/layer_4.svg';
+import detectGap_5 from './assets/detect-gap/layer_5.svg';
+import detectGap_6 from './assets/detect-gap/layer_6.svg';
 
-const blockRed = '/assets/fine-tune/block_red.svg';
-const blockViolet = '/assets/fine-tune/block_v.svg';
+import blockRed from './assets/fine-tune/block_red.svg';
+import blockViolet from './assets/fine-tune/block_v.svg';
 
-const modelStack_0 = '/assets/model-stack/layer_0.svg';
-const modelStack_1 = '/assets/model-stack/layer_1.svg';
-const modelStack_2 = '/assets/model-stack/layer_2.svg';
+import modelStack_0 from './assets/model-stack/layer_0.svg';
+import modelStack_1 from './assets/model-stack/layer_1.svg';
+import modelStack_2 from './assets/model-stack/layer_2.svg';
 
 export const infographicList = {
   taxonomy: {

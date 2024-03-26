@@ -19,7 +19,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/HowItWorks/InfographicAnimation/constant.js",
-    "src/components/HowItWorks/InfographicAnimation/index.js"],
+  ],
   "exclude": ["node_modules"]
 }
