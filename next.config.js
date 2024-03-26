@@ -5,13 +5,24 @@ const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-r
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
+
+  // GitHub pages
+  rewrites: () => [
+    {
+      source: '/website',
+      destination: '/',
+    },
+  ],
+
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
   },
+
   images: {
     unoptimized: true,
   },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
