@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 import { Column, Grid } from '@carbon/react';
-import TaxonomyTree from './graphics/TaxonomyTree';
+import TaxonomyTree from './TaxonomyTree/TaxonomyTree';
 
 import styles from './Taxonomy.module.scss';
 

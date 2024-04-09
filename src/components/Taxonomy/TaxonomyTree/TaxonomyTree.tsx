@@ -1,6 +1,7 @@
-import { FC, ReactNode, RefObject, useEffect, useRef, useState } from 'react';
+import { FC, ReactNode, RefObject, useRef } from 'react';
 import classNames from 'classnames';
-import { Variants, cubicBezier, motion, useInView } from 'framer-motion';
+import { Variants, motion, useInView } from 'framer-motion';
+import Link from './Link';
 
 import styles from './TaxonomyTree.module.scss';
 
@@ -8,19 +9,34 @@ type NodeProps = {
   children?: (ref: RefObject<HTMLDivElement>) => ReactNode;
   className?: string;
   dashed?: boolean;
-  idx?: number;
+  idx: number;
   label?: string;
   left?: number | string;
   parent?: RefObject<HTMLDivElement>;
   selected?: boolean;
+  simulateTyping?: boolean;
   top?: number | string;
   width?: number | string;
 };
 
-const NODE_DELAY = 0.15;
-const LINE_DRAW_SPEED = 0.4;
-const NODE_DRAW_SPEED = 0.4;
-const LABEL_DRAW_SPEED = 0.5;
+export const NODE_DELAY = 0.18;
+export const LINE_DRAW_SPEED = 0.5;
+const NODE_DRAW_SPEED = 0.5;
+const LABEL_DRAW_SPEED = 0.3;
+const TIMING_OVERLAP = 0.2;
+
+const nodeVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  draw: idx => ({
+    opacity: 1,
+    transition: {
+      delay: idx * NODE_DELAY + LINE_DRAW_SPEED - TIMING_OVERLAP,
+      duration: NODE_DRAW_SPEED,
+    },
+  }),
+};
 
 const nodeBackgroundVariants: Variants = {
   initial: {
@@ -42,82 +58,29 @@ const nodeLabelVariants: Variants = {
   draw: idx => ({
     opacity: 1,
     transition: {
-      delay: idx * NODE_DELAY + LINE_DRAW_SPEED + NODE_DRAW_SPEED,
+      delay:
+        idx * NODE_DELAY + LINE_DRAW_SPEED + NODE_DRAW_SPEED - TIMING_OVERLAP,
       duration: LABEL_DRAW_SPEED,
     },
   }),
 };
 
-const linkVariants: Variants = {
-  initial: { pathLength: 0 },
-  draw: idx => ({
-    pathLength: 1,
+const typedTextVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  draw: ({ nodeIdx, charIdx }) => ({
+    opacity: 1,
     transition: {
-      delay: idx * NODE_DELAY,
-      duration: LINE_DRAW_SPEED,
-      ease: cubicBezier(0.36, 0.2, 0.35, 0.79),
+      delay:
+        nodeIdx * NODE_DELAY +
+        LINE_DRAW_SPEED +
+        NODE_DRAW_SPEED +
+        0.2 * charIdx +
+        Math.random() * 0.2,
+      duration: 0.01,
     },
   }),
-};
-
-const Link: FC<{
-  idx?: number;
-  src: RefObject<HTMLDivElement>;
-  dest: RefObject<HTMLDivElement>;
-  dashed?: boolean;
-  selected?: boolean;
-}> = ({ src, dest, dashed, selected, idx }) => {
-  const [rendered, setRendered] = useState(false);
-
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  if (!rendered || !src.current || !dest?.current) return null;
-
-  const r = 16;
-
-  const x0 = src.current.offsetLeft + src.current.offsetWidth;
-  const x2 = dest.current.offsetLeft;
-  const x1 = (x0 + x2) / 2;
-
-  const y0 = src.current.offsetTop + src.current.offsetHeight / 2;
-  const y1 = dest.current.offsetTop + dest.current.offsetHeight / 2;
-
-  return (
-    <svg fill="none" className={styles.link}>
-      <motion.path
-        className={classNames({
-          [styles.dashed]: dashed,
-          [styles.selected]: selected,
-        })}
-        d={
-          y1 - y0 >= r
-            ? `\
-          M${x0} ${y0}\
-          H${x1 - r}\
-          C${x1 - r / 2} ${y0} ${x1} ${y0 + r / 2} ${x1} ${y0 + r}\
-          V${y1 - r}\
-          C${x1} ${y1 - r / 2} ${x1 + r / 2} ${y1} ${x1 + r} ${y1}\
-          H${x2}`
-            : y1 - y0 <= -r
-              ? `\
-          M${x0} ${y0}\
-          H${x1 - r}\
-          C${x1 - r / 2} ${y0} ${x1} ${y0 - r / 2} ${x1} ${y0 - r}\
-          V${y1 + r}\
-          C${x1} ${y1 + r / 2} ${x1 + r / 2} ${y1} ${x1 + r} ${y1}\
-          H${x2}`
-              : `M${x0} ${y0}H${x2}`
-        }
-        strokeDasharray={dashed ? '5 5' : undefined}
-        variants={linkVariants}
-        initial="initial"
-        animate="draw"
-        custom={idx}
-      />
-    </svg>
-  );
 };
 
 const Node: FC<NodeProps> = ({
@@ -129,10 +92,12 @@ const Node: FC<NodeProps> = ({
   left,
   parent,
   selected,
+  simulateTyping,
   top,
   width,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <motion.div
@@ -142,6 +107,7 @@ const Node: FC<NodeProps> = ({
           [styles.selected]: selected,
         })}
         style={{ top, left, width }}
+        variants={nodeVariants}
         initial="initial"
         animate="draw"
         custom={idx}
@@ -151,9 +117,21 @@ const Node: FC<NodeProps> = ({
           variants={nodeBackgroundVariants}
           custom={idx}
         ></motion.div>
-        <motion.span variants={nodeLabelVariants} custom={idx}>
-          {label}
-        </motion.span>
+        {simulateTyping && label ? (
+          Array.from(label).map((char, i) => (
+            <motion.span
+              key={i}
+              variants={typedTextVariants}
+              custom={{ nodeIdx: idx, charIdx: i }}
+            >
+              {char}
+            </motion.span>
+          ))
+        ) : (
+          <motion.span variants={nodeLabelVariants} custom={idx}>
+            {label}
+          </motion.span>
+        )}
       </motion.div>
       {parent ? (
         <Link
@@ -170,6 +148,13 @@ const Node: FC<NodeProps> = ({
 };
 
 const col = 250;
+const selectedNodeDelay = 2;
+const lvlDelay = 6;
+const lvl0 = 0;
+const lvl1 = lvl0 + 1 + lvlDelay;
+const lvl2 = lvl1 + 10 + lvlDelay;
+const lvl3 = lvl2 + 7 + lvlDelay;
+const lvl4 = lvl3 + 4 + lvlDelay;
 
 const TaxonomyTree: FC = () => {
   const animationRef = useRef<HTMLDivElement>(null);
@@ -178,7 +163,7 @@ const TaxonomyTree: FC = () => {
   return (
     <div className={styles.tree} ref={animationRef}>
       {inView ? (
-        <Node top={90} label="compositional skills" idx={0} selected>
+        <Node top={110} label="compositional skills" idx={lvl0 + 0} selected>
           {parent1Ref => (
             <>
               <Node
@@ -186,32 +171,38 @@ const TaxonomyTree: FC = () => {
                 left={col}
                 parent={parent1Ref}
                 width={103}
-                idx={1}
+                idx={lvl1 + 0}
               />
               <Node
-                top={25}
+                top={30}
                 left={col}
                 parent={parent1Ref}
                 width={83}
-                idx={2}
+                idx={lvl1 + 1}
               />
               <Node
-                top={50}
+                top={60}
                 left={col}
                 parent={parent1Ref}
                 width={124}
-                idx={3}
+                idx={lvl1 + 2}
               />
 
               <Node
-                top={90}
+                top={110}
                 left={col}
                 parent={parent1Ref}
                 width={66}
-                idx={4}
+                idx={lvl1 + 3}
               />
 
-              <Node top={130} left={col} parent={parent1Ref} width={90} idx={5}>
+              <Node
+                top={170}
+                left={col}
+                parent={parent1Ref}
+                width={90}
+                idx={lvl1 + 4}
+              >
                 {/* {parent2Ref => (
                   <>
                     <Node
@@ -250,79 +241,79 @@ const TaxonomyTree: FC = () => {
               /> */}
 
               <Node
-                top={430}
+                top={410}
                 left={col}
                 parent={parent1Ref}
                 width={96}
-                idx={6}
+                idx={lvl1 + 5}
               />
               <Node
-                top={455}
+                top={440}
                 left={col}
                 parent={parent1Ref}
                 width={77}
-                idx={7}
+                idx={lvl1 + 6}
               />
               <Node
-                top={480}
+                top={470}
                 left={col}
                 parent={parent1Ref}
                 width={84}
-                idx={8}
+                idx={lvl1 + 7}
               />
               <Node
-                top={505}
+                top={500}
                 left={col}
                 parent={parent1Ref}
                 width={104}
-                idx={9}
+                idx={lvl1 + 8}
               />
 
               <Node
-                top={380}
+                top={360}
                 left={col}
                 parent={parent1Ref}
                 label="writing"
-                idx={10}
+                idx={lvl1 + 9 + selectedNodeDelay}
                 selected
               >
                 {parent2Ref => (
                   <>
                     <Node
-                      top={290}
+                      top={250}
                       left={col * 2}
                       parent={parent2Ref}
                       width={83}
-                      idx={11}
+                      idx={lvl2 + 0}
                     />
                     <Node
-                      top={315}
+                      top={280}
                       left={col * 2}
                       parent={parent2Ref}
                       width={97}
-                      idx={12}
+                      idx={lvl2 + 1}
                     />
                     <Node
-                      top={340}
+                      top={310}
                       left={col * 2}
                       parent={parent2Ref}
                       width={66}
-                      idx={13}
+                      idx={lvl2 + 2}
                     />
 
                     <Node
-                      top={430}
+                      top={410}
                       left={col * 2}
                       parent={parent2Ref}
                       width={132}
-                      idx={14}
+                      idx={lvl2 + 3}
                     />
                     <Node
-                      top={455}
+                      top={440}
                       left={col * 2}
                       parent={parent2Ref}
                       width={83}
-                      idx={15}
+                      idx={lvl2 + 4}
                     />
                     {/* <Node
                       top={505}
@@ -333,111 +324,113 @@ const TaxonomyTree: FC = () => {
                       idx={34}
                     /> */}
                     <Node
-                      top={480}
+                      top={470}
                       left={col * 2}
                       parent={parent2Ref}
                       width={117}
-                      idx={16}
+                      idx={lvl2 + 5}
                     />
                     <Node
-                      top={265}
+                      top={220}
                       left={col * 2}
                       parent={parent2Ref}
                       label="freeform"
-                      idx={17}
+                      idx={lvl2 + 6 + selectedNodeDelay}
                       selected
                     >
                       {parent3Ref => (
                         <>
                           <Node
-                            top={155}
+                            top={100}
                             left={col * 3}
                             parent={parent3Ref}
                             width={62}
-                            idx={18}
+                            idx={lvl3 + 0}
                           />
                           <Node
-                            top={205}
+                            top={160}
                             left={col * 3}
                             parent={parent3Ref}
                             width={81}
-                            idx={19}
+                            idx={lvl3 + 1}
                           />
                           <Node
-                            top={230}
+                            top={190}
                             left={col * 3}
                             parent={parent3Ref}
                             width={66}
-                            idx={20}
+                            idx={lvl3 + 2}
                           />
                           <Node
-                            top={180}
+                            top={130}
                             left={col * 3}
                             parent={parent3Ref}
                             label="poetry"
-                            idx={21}
+                            idx={lvl3 + 3 + selectedNodeDelay}
                             selected
                           >
                             {parent4Ref => (
                               <>
                                 <Node
-                                  top={20}
+                                  top={-50}
                                   left={col * 4}
                                   parent={parent4Ref}
-                                  label="Animal jokes"
-                                  idx={22}
+                                  label="Ballad"
+                                  idx={lvl4 + 0}
                                 />
                                 <Node
-                                  top={45}
+                                  top={-20}
                                   left={col * 4}
                                   parent={parent4Ref}
-                                  label="Bad jokes"
-                                  idx={23}
+                                  label="Epic"
+                                  idx={lvl4 + 1}
+                                />
+                                <Node
+                                  top={10}
+                                  left={col * 4}
+                                  parent={parent4Ref}
+                                  label="Freeverse"
+                                  idx={lvl4 + 2}
+                                />
+                                <Node
+                                  top={40}
+                                  left={col * 4}
+                                  parent={parent4Ref}
+                                  label="Limerick"
+                                  idx={lvl4 + 3}
                                 />
                                 <Node
                                   top={70}
                                   left={col * 4}
                                   parent={parent4Ref}
-                                  label="Birthday jokes"
-                                  idx={24}
-                                />
-                                <Node
-                                  top={120}
-                                  left={col * 4}
-                                  parent={parent4Ref}
-                                  label="Animal puns"
-                                  idx={25}
+                                  label="Narrative poetry"
+                                  idx={lvl4 + 4}
                                 />
 
                                 <Node
-                                  top={230}
+                                  top={190}
                                   left={col * 4}
                                   parent={parent4Ref}
-                                  label="knock knock jokes"
-                                  idx={26}
+                                  label="Ode sonnet"
+                                  idx={lvl4 + 5}
                                 />
                                 {/* <Node
-                                  top={280}
+                                    top={280}
+                                    left={col * 4}
+                                    parent={parent4Ref}
+                                    width={66}
+                                    dashed
+                                    idx={35}
+                                  /> */}
+                                <Node
+                                  top={220}
                                   left={col * 4}
+                                  width={57}
                                   parent={parent4Ref}
-                                  width={66}
+                                  label="Haiku"
+                                  idx={lvl4 + 12}
                                   dashed
-                                  idx={35}
-                                /> */}
-                                <Node
-                                  top={255}
-                                  left={col * 4}
-                                  parent={parent4Ref}
-                                  label="charade"
-                                  idx={27}
-                                />
-                                <Node
-                                  top={95}
-                                  left={col * 4}
-                                  parent={parent4Ref}
-                                  label="haiku"
-                                  idx={28}
-                                  selected
+                                  simulateTyping
                                 />
                               </>
                             )}
