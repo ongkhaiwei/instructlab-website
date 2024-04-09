@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { Column, Grid, Link } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Cube from './graphics/Cube';
-import GitHub from './graphics/github.svg';
-import HuggingFace from './graphics/hf.svg';
+import GitHub from '../Icons/github.svg';
+import HuggingFace from '../Icons/hf.svg';
 
 import styles from './Leadspace.module.scss';
 

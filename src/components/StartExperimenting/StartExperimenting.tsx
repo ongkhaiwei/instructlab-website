@@ -3,7 +3,8 @@
 import { FC } from 'react';
 import { Button, Column, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
-import MatrixAnimation from './graphics/MatrixAnimation';
+import GitHub from '../Icons/github.svg';
+import AnimatedTerminal from './components/AnimatedTerminal/AnimatedTerminal';
 
 import styles from './StartExperimenting.module.scss';
 
@@ -48,21 +49,26 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
         md={{ span: 4 }}
         sm={{ span: 2 }}
       >
-        <MatrixAnimation />
+        <AnimatedTerminal />
       </Column>
       <Column
         className={styles.content}
-        lg={{ span: 7, offset: 8 }}
+        lg={{ span: 5, offset: 8 }}
         md={{ span: 4, offset: 4 }}
         sm={{ span: 4 }}
       >
         <h2 className={styles.content__header}>Join the community</h2>
         <p className={styles.content__subhead}>
-          Downloading the Lab CLI and experimenting with adding new skills and
-          knowledge is a great way to get started. You can also get involved by
-          contributing new skills, knowledge, or synthetic data directly.
+          To get started, download the ilab command line interface and a
+          quantized version of the latest model from the community GitHub.
+        </p>
+        <p className={styles.content__subhead}>
+          You can experiment locally until your model is producing the desired
+          outputs, and then contribute your skills recipes and knowledge sources
+          back to the community.
         </p>
         <Button className={styles.action} onClick={onCtaClicked}>
+          <GitHub className={styles.icon} />
           <label>Join the community</label> <ArrowRight />
         </Button>
       </Column>

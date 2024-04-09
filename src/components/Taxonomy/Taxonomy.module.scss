@@ -1,0 +1,30 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+
+.pane {
+  .grid {
+    .column {
+      position: relative;
+      height: 100vh;
+
+      .content {
+        position: absolute;
+        top: 30%;
+        left: calc(50% + $grid-gutter / 2);
+        width: calc((100% + $grid-gutter) / 16 * 5 - $grid-gutter);
+
+        &__header {
+          margin-bottom: 32px;
+      
+          @include breakpoint(lg) {
+            margin-bottom: 48px;
+          }
+        }
+
+        &__subhead {
+          position: relative;
+        }
+      }
+    }
+  }
+}

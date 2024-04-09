@@ -5,6 +5,7 @@ import { useCallback } from 'react';
 import ReleaseCycle from '../components/ReleaseCycle/ReleaseCycle';
 import HowItWorks from '../components/HowItWorks/Slideshow';
 import StartExperimenting from '../components/StartExperimenting/StartExperimenting';
+import Taxonomy from '../components/Taxonomy/Taxonomy';
 
 import styles from '../styles/main.module.scss';
 
@@ -40,6 +41,7 @@ export default function Home() {
           />
           <ReleaseCycle />
           <HowItWorks />
+          <Taxonomy />
           <StartExperimenting onCtaClicked={handleStartExperimentingCtaClick} />
         </PageShell>
       </main>

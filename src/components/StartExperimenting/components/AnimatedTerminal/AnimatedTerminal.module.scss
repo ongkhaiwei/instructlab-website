@@ -1,0 +1,21 @@
+@use '@carbon/colors' as *;
+
+.term {
+  
+  :global(.Terminal-term) {
+    height: 380px;
+  }
+
+  :global(.Terminal-window) {
+    background-color: $gray-100;
+    border: none;
+  }
+
+  :global(.Terminal-btn) {
+    background-color: $gray-80;
+  }
+
+  :global(.Terminal-control-btn) {
+    display: none;
+  }
+}
