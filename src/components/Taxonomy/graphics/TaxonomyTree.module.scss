@@ -15,20 +15,39 @@
     position: absolute;
     left: 0;
     height: 20px;
-    background: $gray-20;
-    // background: linear-gradient(-90deg, $gray-20 39%, $black-100 39%);
     color: $gray-40;
     border-radius: 12px;
-    font-size: 10px;
+    font-size: 11px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 10px;
     white-space: nowrap;
+    overflow: hidden;
+
+    .background {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: $gray-20;
+      left: -100%;
+    }
+
+    &.selected {
+      .background {
+        background-color: $black-100;
+      }
+      color: $white-0;
+    }
 
     &.dashed {
       border: 1px dashed $black-100;
       background-color: transparent;
+
+      .background {
+        display: none;
+      }
     }
     
     > .node {
@@ -44,9 +63,12 @@
     stroke: $gray-20;
 
     .dashed {
-      stroke: $black-100;
+      // stroke: $black-100;
       stroke-dasharray: 2 3;
-      z-index: -1;
+    }
+    
+    .selected {
+      stroke: $black-100;
     }
   }
 }
