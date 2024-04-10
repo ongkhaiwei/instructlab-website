@@ -1,0 +1,27 @@
+@use '@carbon/colors' as *;
+
+.borderedAnswer {
+  position: relative;
+  border: solid 1px white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0 -1em 0;
+  width: 100%;
+  
+  &__title {
+    position: absolute;
+    align-self: center;
+    background-color: $gray-100;
+    top: -10px;
+    padding: 0 1em;
+  }
+  
+  &__footer {
+    position: absolute;
+    align-self: flex-end;
+    background-color: $gray-100;
+    bottom: -10px;
+    padding: 0 1em;
+  }
+}

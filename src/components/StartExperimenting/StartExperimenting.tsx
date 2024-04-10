@@ -47,7 +47,7 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
         className={styles.graphics}
         lg={{ span: 6 }}
         md={{ span: 4 }}
-        sm={{ span: 2 }}
+        sm={{ span: 4, offset: 0 }}
       >
         <AnimatedTerminal />
       </Column>
