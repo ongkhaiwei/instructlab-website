@@ -24,7 +24,21 @@ const linkVariants: Variants = {
     opacity: 1,
     transition: {
       delay: idx * NODE_DELAY,
-      duration: LINE_DRAW_SPEED,
+      duration: 0.01,
+      ease: cubicBezier(0.36, 0.2, 0.35, 0.79),
+    },
+  }),
+};
+
+const dashedLinkVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  draw: idx => ({
+    opacity: 1,
+    transition: {
+      delay: idx * NODE_DELAY,
+      duration: 0.01,
       ease: cubicBezier(0.36, 0.2, 0.35, 0.79),
     },
   }),
@@ -80,12 +94,57 @@ const Link: FC<{
           H${x2}`
               : `M${x0} ${y0}H${x2}`
         }
-        strokeDasharray={dashed ? '5 5' : undefined}
         variants={linkVariants}
-        initial={dashed ? 'initialDashed' : 'initial'}
-        animate={dashed ? 'drawDashed' : 'draw'}
+        initial="initial"
+        animate="draw"
         custom={idx}
       />
+      {dashed ? (
+        <>
+          <motion.path
+            d={
+              y1 - y0 >= r
+                ? `\
+          M${x0} ${y0}\
+          H${x1 - r}\
+          C${x1 - r / 2} ${y0} ${x1} ${y0 + r / 2} ${x1} ${y0 + r}\
+          V${y1 - r - 25}`
+                : y1 - y0 <= -r
+                  ? `\
+          M${x0} ${y0}\
+          H${x1 - r}\
+          C${x1 - r / 2} ${y0} ${x1} ${y0 - r / 2} ${x1} ${y0 - r}\
+          V${y1 + r - 25}`
+                  : `M${x0} ${y0}H${x2}`
+            }
+            strokeDasharray={'2 3'}
+            stroke="e0e0e0"
+            variants={dashedLinkVariants}
+            initial="initial"
+            animate="draw"
+            custom={idx}
+          />
+          <motion.path
+            d={
+              y1 - y0 >= r
+                ? `\
+          M${x1} ${y1 - r - 27}\
+          V${y1 - r}\
+          C${x1} ${y1 - r / 2} ${x1 + r / 2} ${y1} ${x1 + r} ${y1}\
+          H${x2}`
+                : y1 - y0 <= -r
+                  ? `\
+          M${x1} ${y1 + r - 27}\
+          V${y1 + r}\
+          C${x1} ${y1 + r / 2} ${x1 + r / 2} ${y1} ${x1 + r} ${y1}\
+          H${x2}`
+                  : `M${x0} ${y0}H${x2}`
+            }
+            strokeDasharray={'2 3'}
+            stroke="white"
+          />
+        </>
+      ) : null}
     </svg>
   );
 };

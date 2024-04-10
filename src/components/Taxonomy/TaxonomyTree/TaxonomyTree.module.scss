@@ -1,8 +1,10 @@
 @use '@carbon/colors' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
 
 .tree {
   position: relative;
-  height: 100%;
+  height: 530px;
+  width: 100%;
 
   svg {
     position: absolute;
@@ -22,8 +24,19 @@
     justify-content: center;
     align-items: center;
     padding: 0 10px;
-    white-space: nowrap;
     overflow: hidden;
+    max-width: 100px;
+    white-space: nowrap;
+    
+    span {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    @include breakpoint(lg) {
+      max-width: unset;
+    }
 
     .background {
       position: absolute;
@@ -65,7 +78,6 @@
 
     .dashed {
       stroke: $black-100;
-      stroke-dasharray: 2 3;
     }
     
     .selected {
