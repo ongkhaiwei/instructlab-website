@@ -183,56 +183,56 @@ const Cube: FC = () => {
               <g name="back">
                 <path
                   d="M226.583 216.844L170.052 184.205L113.521 216.844L170.052 249.484L226.583 216.844Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.05 314.76L226.581 282.12V216.842L170.05 249.481V314.76Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M57.5806 510.861L114.112 478.222V412.943L57.5806 445.583V510.861Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M57.5799 510.861V445.583L1.04883 412.943V478.222L57.5799 510.861Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M169.87 249.53L113.449 216.891L57.7188 249.5L113.339 282.169L169.87 249.53Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M57.5799 445.492V380.214L1.04883 347.574V412.853L57.5799 445.492Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M114.111 282.212L57.5799 249.572L1.04883 282.212L57.5799 314.851L114.111 282.212Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M57.5799 380.125V314.846L1.04883 282.207V347.486L57.5799 380.125Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
@@ -247,21 +247,21 @@ const Cube: FC = () => {
               >
                 <path
                   d="M170.711 445.594L114.18 412.955L57.6488 445.594L114.18 478.234L170.711 445.594Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M114.18 543.508L170.711 510.868V445.59L114.18 478.229V543.508Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M114.18 543.508V478.229L57.6488 445.59V510.868L114.18 543.508Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
@@ -276,21 +276,21 @@ const Cube: FC = () => {
               >
                 <path
                   d="M283.062 249.444L226.531 216.805L170 249.444L226.531 282.084L283.062 249.444Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.531 347.358L283.062 314.718V249.44L226.531 282.079V347.358Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.531 347.358V282.079L170 249.44V314.718L226.531 347.358Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
@@ -300,133 +300,133 @@ const Cube: FC = () => {
               <g name="front">
                 <path
                   d="M283.556 510.611L340.087 477.972V412.693L283.556 445.332V510.611Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.981 543.252L283.512 510.612V445.333L226.981 477.973V543.252Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M283.301 445.295L339.832 412.655V347.376L283.301 380.016V445.295Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M113.831 477.978V412.699L57.3 380.06V445.339L113.831 477.978Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.407 575.894L226.938 543.255V477.976L170.407 510.615V575.894Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.407 575.894V510.615L113.876 477.976V543.255L170.407 575.894Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.981 477.978L283.512 445.339V380.06L226.981 412.699V477.978Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.938 412.699L170.407 380.06L113.876 412.699L170.407 445.339L226.938 412.699Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.407 510.611L226.938 477.972V412.693L170.407 445.332V510.611Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.407 510.611V445.332L113.876 412.693V477.972L170.407 510.611Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M339.831 282.189L283.3 249.55L226.769 282.189L283.3 314.829L339.831 282.189Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M283.301 380.105L339.832 347.466V282.187L283.301 314.826V380.105Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.403 282.189L169.872 249.55L113.341 282.189L169.872 314.829L226.403 282.189Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M283.121 314.871L226.59 282.232L170.059 314.871L226.59 347.511L283.121 314.871Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.59 412.785L283.122 380.145V314.867L226.59 347.506V412.785Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M226.59 412.785V347.506L170.059 314.867V380.145L226.59 412.785Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M170.644 314.871L114.113 282.232L57.5813 314.871L114.113 347.511L170.644 314.871Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M114.113 412.785L170.644 380.145V314.867L114.113 347.506V412.785Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M114.113 412.785V347.506L57.5813 314.867V380.145L114.113 412.785Z"
-                  fill="#5A00FF"
+                  fill="black"
                   stroke="white"
                   strokeMiterlimit="10"
                   strokeLinejoin="round"
@@ -467,21 +467,21 @@ const Cube: FC = () => {
             >
               <path
                 d="M227.062 347.639L170.531 315L114 347.639L170.531 380.279L227.062 347.639Z"
-                fill="#5A00FF"
+                fill="black"
                 stroke="white"
                 strokeMiterlimit="10"
                 strokeLinejoin="round"
               />
               <path
                 d="M170.531 445.553L227.062 412.913V347.635L170.531 380.274V445.553Z"
-                fill="#5A00FF"
+                fill="black"
                 stroke="white"
                 strokeMiterlimit="10"
                 strokeLinejoin="round"
               />
               <path
                 d="M170.531 445.553V380.274L114 347.635V412.913L170.531 445.553Z"
-                fill="#5A00FF"
+                fill="black"
                 stroke="white"
                 strokeMiterlimit="10"
                 strokeLinejoin="round"

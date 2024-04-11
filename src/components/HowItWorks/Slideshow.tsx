@@ -30,8 +30,9 @@ const steps = [
     animationName: 'detect-gap',
     description: (
       <>
-        Experiment locally, on a quantized version of the latest InstructLab
-        model, with adding new <strong>knowledge and skills</strong>
+        InstructLab can augment models through <strong>skills recipes</strong>{' '}
+        used to generate synthetic data for tuning. Experiments can be run
+        locally on quantized version of these models.
       </>
     ),
   },
@@ -40,9 +41,9 @@ const steps = [
     animationName: 'taxonomy',
     description: (
       <>
-        Once a synthetic data recipe is ready, submit a pull request to
-        contribute back to the InstructLab repository, which is organized in a
-        structured <strong>taxonomy</strong>
+        Skills recipes take the form of example inputs / outputs for a desired
+        skill. These skills are organized in a structured{' '}
+        <strong>taxonomy</strong> and anyone can contribute to it.
       </>
     ),
   },
@@ -51,9 +52,9 @@ const steps = [
     animationName: 'synthetic-data',
     description: (
       <>
-        InstructLab uses the new recipes to systematically generate{' '}
-        <strong>synthetic data</strong> for the new capabilities - and this data
-        is released to the community
+        InstructLab uses the skills recipes to systematically generate new{' '}
+        <strong>synthetic data</strong>, which is also made available to the
+        community.
       </>
     ),
   },
@@ -62,9 +63,9 @@ const steps = [
     animationName: 'fine-tune',
     description: (
       <>
-        InstructLab <strong>merges</strong> the new skill back into the base
-        model by updating it using all synthetic data generated to date, and
-        releases a new model version to the community
+        The InstructLab base model is re-tuned using all synthetic data
+        generated to date. This includes any new contributions, which introduce{' '}
+        <strong>new skills</strong>.
       </>
     ),
   },

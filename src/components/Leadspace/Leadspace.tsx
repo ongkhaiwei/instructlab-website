@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Column, Grid, Link } from '@carbon/react';
+import { Column, Button, Grid, Link } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Cube from './graphics/Cube';
 import GitHub from '../Icons/github.svg';
@@ -31,11 +31,10 @@ const Leadspace: FC<LeadspaceProps> = ({
         </p>
         <Link className={styles.action} onClick={onJoinCommunity}>
           <GitHub className={styles.icon} />
-          <label>Join the community</label>
-          <ArrowRight />
+          <label>Join the community</label> <ArrowRight />
         </Link>
         <Link className={styles.action} onClick={onCheckLatestModel}>
-          <HuggingFace className={styles.icon} />
+        <HuggingFace className={styles.icon} />
           <label>Check out the latest model</label>
           <ArrowRight />
         </Link>

@@ -77,23 +77,23 @@ const ReleaseCycleDiagram: FC = () => {
         >
           <motion.div className={styles.title}>InstructLab</motion.div>
           <motion.div className={styles.img1} {...getAnimationProps('image1')}>
-            Experiment with adding skills on a local model
+            Open source community experiments with skills
           </motion.div>
           <motion.div className={styles.img2} {...getAnimationProps('image2')}>
-            Submit perfected skills to InstructLab project
+            Contributors open pull requests for InstructLab
           </motion.div>
           <motion.div className={styles.img3} {...getAnimationProps('image3')}>
-            InstructLab project updates main model
+            New skills merged into community LLM
           </motion.div>
           <motion.div className={styles.arrow1} {...getAnimationProps('text1')}>
             New skills recipes
           </motion.div>
           <motion.div className={styles.arrow2} {...getAnimationProps('text2')}>
-            Approved skills
+            Approved pull requests
           </motion.div>
 
           <motion.div className={styles.arrow3} {...getAnimationProps('text3')}>
-            New SoTA model version
+            Updated community model
           </motion.div>
         </div>
       </div>
@@ -245,7 +245,7 @@ const ReleaseCycleDiagram: FC = () => {
 
         {/* Img 2 */}
         <motion.g {...getAnimationProps('image2')}>
-          <circle cx="495" cy="382" r="64" fill="#5A00FF" />
+          <circle cx="495" cy="382" r="64" fill="black" />
           <rect
             width="60"
             height="60"
