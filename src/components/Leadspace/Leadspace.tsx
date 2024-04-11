@@ -34,7 +34,7 @@ const Leadspace: FC<LeadspaceProps> = ({
           <label>Join the community</label> <ArrowRight />
         </Link>
         <Link className={styles.action} onClick={onCheckLatestModel}>
-        <HuggingFace className={styles.icon} />
+          <HuggingFace className={styles.icon} />
           <label>Check out the latest model</label>
           <ArrowRight />
         </Link>
