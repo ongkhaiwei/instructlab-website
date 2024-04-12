@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Column, Button, Grid, Link } from '@carbon/react';
+import { Column, Button, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Cube from './graphics/Cube';
 import GitHub from '../Icons/github.svg';
@@ -29,15 +29,15 @@ const Leadspace: FC<LeadspaceProps> = ({
         <p className={styles.content__subhead}>
           An new community-based approach to build truly open-source LLMs
         </p>
-        <Link className={styles.action} onClick={onJoinCommunity}>
+        <Button className={styles.action} onClick={onJoinCommunity}>
           <GitHub className={styles.icon} />
           <label>Join the community</label> <ArrowRight />
-        </Link>
-        <Link className={styles.action} onClick={onCheckLatestModel}>
+        </Button>
+        <Button className={styles.action} onClick={onCheckLatestModel}>
           <HuggingFace className={styles.icon} />
           <label>Check out the latest model</label>
           <ArrowRight />
-        </Link>
+        </Button>
       </Column>
       <Column
         className={styles.graphicsWrapper}
