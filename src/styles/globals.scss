@@ -7,7 +7,7 @@
   @include themes.theme($white, (
     text-primary: black,
     border-inverse: black,
-    background-brand: black
+    background-brand: #3B3FB6,
   ));
 
   --light-gray: #F2F4F8;
