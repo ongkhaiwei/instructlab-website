@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Column, Button, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
-import Cube from './graphics/Cube';
+import Logo from './graphics/Logo';
 import GitHub from '../Icons/github.svg';
 import HuggingFace from '../Icons/hf.svg';
 
@@ -46,7 +46,7 @@ const Leadspace: FC<LeadspaceProps> = ({
         md={{ span: 4, offset: 4 }}
       >
         <div className={styles.graphics}>
-          <Cube />
+          <Logo />
         </div>
       </Column>
     </Grid>
