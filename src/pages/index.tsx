@@ -11,15 +11,15 @@ import styles from '../styles/main.module.scss';
 
 export default function Home() {
   const handleJoinCommunity = useCallback(() => {
-    // TODO
+    window.location.href = "https://github.com/instructlab";
   }, []);
 
   const handleCheckLatestModel = useCallback(() => {
-    // TODO
+    window.location.href = "https://huggingface.co/instructlab";
   }, []);
 
   const handleStartExperimentingCtaClick = useCallback(() => {
-    // TODO
+    window.location.href = "https://github.com/instructlab";
   }, []);
 
   return (
