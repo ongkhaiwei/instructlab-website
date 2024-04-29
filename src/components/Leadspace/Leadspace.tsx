@@ -4,17 +4,20 @@ import { ArrowRight } from '@carbon/icons-react';
 import Logo from './graphics/Logo';
 import GitHub from '../Icons/github.svg';
 import HuggingFace from '../Icons/hf.svg';
+import Paper from '../Icons/paper.svg';
 
 import styles from './Leadspace.module.scss';
 
 type LeadspaceProps = {
   onJoinCommunity: () => void;
   onCheckLatestModel: () => void;
+  onReadPaper: () => void;
 };
 
 const Leadspace: FC<LeadspaceProps> = ({
   onJoinCommunity,
   onCheckLatestModel,
+  onReadPaper
 }) => (
   <section className={styles.pane}>
     <Grid>
@@ -38,6 +41,10 @@ const Leadspace: FC<LeadspaceProps> = ({
           <label>Check out the latest model</label>
           <ArrowRight />
         </Button>
+        <Button className={styles.action} onClick={onReadPaper}>
+          <Paper className={styles.icon} />
+          <label>Read the paper</label> <ArrowRight />
+        </Button>
       </Column>
       <Column
         className={styles.graphicsWrapper}
@@ -54,3 +61,4 @@ const Leadspace: FC<LeadspaceProps> = ({
 );
 
 export default Leadspace;
+
