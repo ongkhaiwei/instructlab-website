@@ -17,7 +17,7 @@ type LeadspaceProps = {
 const Leadspace: FC<LeadspaceProps> = ({
   onJoinCommunity,
   onCheckLatestModel,
-  onReadPaper
+  onReadPaper,
 }) => (
   <section className={styles.pane}>
     <Grid>
@@ -61,4 +61,3 @@ const Leadspace: FC<LeadspaceProps> = ({
 );
 
 export default Leadspace;
-

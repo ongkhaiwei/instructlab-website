@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   const handleReadPaper = useCallback(() => {
-    window.location.href = "https://arxiv.org/abs/2403.01081";
+    window.location.href = 'https://arxiv.org/abs/2403.01081';
   }, []);
 
   return (
@@ -53,4 +53,3 @@ export default function Home() {
     </>
   );
 }
-
