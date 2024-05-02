@@ -76,7 +76,28 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
     <footer>
       <Grid className={styles.footerGrid}>
         <Column className={styles.content} lg={16} md={8} sm={4}>
-          {/* Footer */}
+          <div style={{ margin: 'auto' }}>
+            <p>&copy; InstructLab</p>
+
+            <p>
+              <a href="https://github.com/instructlab/">GitHub</a> |
+              <a href="https://github.com/instructlab/community/blob/main/Collaboration.md">
+                Collaborate
+              </a>
+              |
+              <a href="https://github.com/instructlab/community/blob/main/CODE_OF_CONDUCT.md">
+                Code of Conduct
+              </a>
+            </p>
+
+            <p>Sponsored by Red Hat</p>
+
+            <p>
+              <a href="https://creativecommons.org/licenses/by/4.0/deed.en">
+                CC-BY-4.0
+              </a>
+            </p>
+          </div>
         </Column>
       </Grid>
     </footer>
