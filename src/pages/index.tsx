@@ -22,6 +22,10 @@ export default function Home() {
     window.location.href = 'https://github.com/instructlab';
   }, []);
 
+  const handleReadPaper = useCallback(() => {
+    window.location.href = 'https://arxiv.org/abs/2403.01081';
+  }, []);
+
   return (
     <>
       <Head>
@@ -38,6 +42,7 @@ export default function Home() {
           <Leadspace
             onJoinCommunity={handleJoinCommunity}
             onCheckLatestModel={handleCheckLatestModel}
+            onReadPaper={handleReadPaper}
           />
           <ReleaseCycle />
           <HowItWorks />
