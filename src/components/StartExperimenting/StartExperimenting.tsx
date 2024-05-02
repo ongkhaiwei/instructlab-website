@@ -76,15 +76,15 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
     <footer>
       <Grid className={styles.footerGrid}>
         <Column className={styles.content} lg={16} md={8} sm={4}>
-          <div style={{ margin: 'auto' }}>
+          <div>
             <p>&copy; InstructLab</p>
 
             <p>
-              <a href="https://github.com/instructlab/">GitHub</a> |
+              <a href="https://github.com/instructlab/">GitHub</a>&nbsp;|&nbsp;
               <a href="https://github.com/instructlab/community/blob/main/Collaboration.md">
                 Collaborate
               </a>
-              |
+              &nbsp;|&nbsp;
               <a href="https://github.com/instructlab/community/blob/main/CODE_OF_CONDUCT.md">
                 Code of Conduct
               </a>
