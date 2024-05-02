@@ -53,8 +53,7 @@ const steps = [
     description: (
       <>
         InstructLab uses the skills recipes to systematically generate new{' '}
-        <strong>synthetic data</strong>, which is also made available to the
-        community.
+        <strong>synthetic data</strong>.
       </>
     ),
   },
