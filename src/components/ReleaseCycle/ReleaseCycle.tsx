@@ -17,10 +17,10 @@ const ReleaseCycle: FC<ReleaseCycleProps> = () => (
         lg={{ span: 7 }}
         sm={{ span: 4 }}
       >
-        <h2>Weekly release cycle for models and data</h2>
+        <h2> Periodic release cycle for models and data</h2>
         <p>
-          Each week, the InstructLab community model will be updated with the
-          latest contributions and shared on Hugging Face.
+          The InstructLab community model will be updated with the
+          latest contributions and shared on Hugging Face regularly.
         </p>
       </Column>
       <Column
