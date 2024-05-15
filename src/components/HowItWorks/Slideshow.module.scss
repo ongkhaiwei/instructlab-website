@@ -1,6 +1,6 @@
 @use '@carbon/styles/scss/breakpoint' as *;
-@use "@carbon/react/scss/theme" as *;
-@use "@carbon/type" as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/type' as *;
 @use '@carbon/grid' as *;
 
 .slideshowWrapper {
@@ -104,7 +104,7 @@
     align-items: flex-end;
 
     .order {
-      @include type-style("heading-05");
+      @include type-style('heading-05');
       color: $text-primary;
       text-align: center;
       font-size: 34px;
@@ -114,7 +114,7 @@
     .description {
       flex: 1;
       margin-left: 4rem;
-      @include type-style("body-02");
+      @include type-style('body-02');
       color: $text-primary;
       word-break: auto-phrase;
       padding-right: 1rem;
@@ -157,4 +157,3 @@
     opacity: 1;
   }
 }
-

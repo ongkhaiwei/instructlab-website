@@ -27,13 +27,13 @@
     overflow: hidden;
     max-width: 100px;
     white-space: nowrap;
-    
+
     span {
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
     @include breakpoint(lg) {
       max-width: unset;
     }
@@ -63,7 +63,7 @@
         display: none;
       }
     }
-    
+
     > .node {
       left: 180px;
     }
@@ -79,7 +79,7 @@
     .dashed {
       stroke: $black-100;
     }
-    
+
     .selected {
       stroke: $black-100;
     }

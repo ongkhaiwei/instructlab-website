@@ -79,7 +79,7 @@ const LayerImg: FC<{
     } else {
       resetAnimation(left, top, width);
     }
-  }, [isAnimOn, layer, size]);
+  }, [isAnimOn, layer, originalSize, resetAnimation, setAnimation, size]);
 
   useEffect(() => {
     const [left, top] = [
