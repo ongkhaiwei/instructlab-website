@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { Variants, motion } from 'framer-motion';
 import Link from './Link';
-import { FC, ReactNode, RefObject, useEffect, useRef } from 'react';
+import { FC, ReactNode, RefObject, useRef } from 'react';
 import { NODE_DELAY, LINE_DRAW_SPEED } from './TaxonomyTree';
 
 import styles from './TaxonomyTree.module.scss';
