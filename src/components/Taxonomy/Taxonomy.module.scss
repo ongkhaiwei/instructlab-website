@@ -19,7 +19,7 @@
         right: 0;
         transform: scale(0.85);
         transform-origin: right top;
-        
+
         @include breakpoint(md) {
           transform: scale(1);
           min-width: 590px;
@@ -33,7 +33,7 @@
         @mixin gridColumn($offset, $span) {
           left: calc((100% + $grid-gutter) / 4 * $offset);
           width: calc((100% + $grid-gutter) / 4 * $span - $grid-gutter);
-          
+
           @include breakpoint(md) {
             left: calc((100% + $grid-gutter) / 8 * $offset);
             width: calc((100% + $grid-gutter) / 8 * $span - $grid-gutter);
@@ -59,7 +59,7 @@
 
         &__header {
           margin-bottom: 32px;
-      
+
           @include breakpoint(lg) {
             margin-bottom: 48px;
           }

@@ -2,7 +2,7 @@
 @use '@carbon/grid' as *;
 @use '@carbon/type' as *;
 @use '@carbon/colors' as *;
-@use "@carbon/react/scss/theme" as *;
+@use '@carbon/react/scss/theme' as *;
 @use '../../styles/type.scss' as *;
 
 .pane {
@@ -15,26 +15,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+
     &__header {
       margin-bottom: 32px;
-  
+
       @include breakpoint(lg) {
         margin-bottom: 48px;
       }
     }
-  
+
     &__subhead {
       position: relative;
     }
-  
+
     .action {
       margin-top: 32px;
       padding-left: 16px;
       width: 100%;
       min-width: 20rem;
       margin-top: 16px;
-  
+
       label {
         flex: 1;
       }
@@ -60,11 +60,11 @@
 
     .graphics {
       transform: scale(0.6);
-  
+
       @include breakpoint(lg) {
         transform: scale(0.8);
       }
-      
+
       @include breakpoint(xlg) {
         transform: scale(1);
       }

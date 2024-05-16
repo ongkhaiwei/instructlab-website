@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect, useState } from 'react';
+import { FC, Fragment, useEffect, useCallback, useState } from 'react';
 import { infographicList } from './constant';
 
 import styles from './InfographicAnimation.module.scss';
@@ -27,43 +27,49 @@ const LayerImg: FC<{
   const [animList, setAnimList] = useState<any[] | null>(null); // eslint-disable-line
   const Img = layer.img;
 
-  const resetAnimation = (left: string, top: string, width: string) => {
-    setTargetStyle({ left: left, top: top, width: width });
-    animList?.map(d => clearTimeout(d));
-    setAnimList(null);
-  };
+  const resetAnimation = useCallback(
+    (left: string, top: string, width: string) => {
+      setTargetStyle({ left: left, top: top, width: width });
+      animList?.map(d => clearTimeout(d));
+      setAnimList(null);
+    },
+    [animList],
+  );
 
-  const setAnimation = (left: string, top: string, width: string) => {
-    if (layer.animation) {
-      setTargetStyle({
-        ...layer.animation[0], //base style to create transition
-        left: getPos('left', layer, originalSize, layer.animation[0].left),
-        top: getPos('top', layer, originalSize, layer.animation[0].top),
-        width,
-      });
+  const setAnimation = useCallback(
+    (left: string, top: string, width: string) => {
+      if (layer.animation) {
+        setTargetStyle({
+          ...layer.animation[0], //base style to create transition
+          left: getPos('left', layer, originalSize, layer.animation[0].left),
+          top: getPos('top', layer, originalSize, layer.animation[0].top),
+          width,
+        });
 
-      const animList = [layer.animation].flat();
-      animList.map((d, i) => {
-        const animation = setTimeout(
-          () => {
-            setTargetStyle({
-              ...d,
-              left: d.left
-                ? getPos('left', layer, originalSize, d.left)
-                : `${left}%`,
-              top: d.top
-                ? getPos('top', layer, originalSize, d.top)
-                : `${top}%`,
-              width,
-            });
-          },
-          (layer?.delay || 0) * (i + 1),
-        );
+        const animList = [layer.animation].flat();
+        animList.map((d, i) => {
+          const animation = setTimeout(
+            () => {
+              setTargetStyle({
+                ...d,
+                left: d.left
+                  ? getPos('left', layer, originalSize, d.left)
+                  : `${left}%`,
+                top: d.top
+                  ? getPos('top', layer, originalSize, d.top)
+                  : `${top}%`,
+                width,
+              });
+            },
+            (layer?.delay || 0) * (i + 1),
+          );
 
-        setAnimList(prev => (prev ? [...prev, animation] : [animation]));
-      });
-    }
-  };
+          setAnimList(prev => (prev ? [...prev, animation] : [animation]));
+        });
+      }
+    },
+    [layer, originalSize],
+  );
 
   useEffect(() => {
     if (!layer) return;
@@ -79,7 +85,7 @@ const LayerImg: FC<{
     } else {
       resetAnimation(left, top, width);
     }
-  }, [isAnimOn, layer, size]);
+  }, [isAnimOn, layer, originalSize, resetAnimation, setAnimation, size]);
 
   useEffect(() => {
     const [left, top] = [
@@ -89,7 +95,7 @@ const LayerImg: FC<{
     const width = `${layer.size || 100}%`;
 
     if (animList === null) setAnimation(left, top, width);
-  }, [animList]);
+  }, [animList, layer, originalSize, setAnimation]);
 
   return (
     <Img
@@ -117,11 +123,11 @@ const InfographicAnimation: FC<InfographicAnimationProps> = ({
   const [isAnimOn, setIsAnimOn] = useState(false);
   const [animWidth, setAnimWidth] = useState(size);
 
-  const resetAnim = () => {
+  const resetAnim = useCallback(() => {
     const delays =
       Math.max(...infographicList[kind].layers.map(d => d.delay || 0)) + 5000;
     setTimeout(() => setIsAnimOn(false), delays);
-  };
+  }, [kind]);
 
   useEffect(() => {
     setTimeout(() => setIsAnimOn(true), 3000);
@@ -138,7 +144,7 @@ const InfographicAnimation: FC<InfographicAnimationProps> = ({
       setAnimList(() => ({ ...infographicList[kind] }) as any); // eslint-disable-line
       resetAnim();
     }
-  }, [kind, size]);
+  }, [kind, resetAnim, size]);
 
   useEffect(() => {
     if (!!infographicList[kind]) {
@@ -150,7 +156,7 @@ const InfographicAnimation: FC<InfographicAnimationProps> = ({
         resetAnim();
       }
     }
-  }, [isOn, isAnimOn]);
+  }, [isOn, isAnimOn, kind, resetAnim]);
 
   return (
     <>

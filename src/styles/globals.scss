@@ -4,15 +4,18 @@
 @use '@carbon/styles/scss/breakpoint' as *;
 
 :root {
-  @include themes.theme($white, (
-    text-primary: black,
-    border-inverse: black,
-    background-brand: #3B3FB6,
-  ));
+  @include themes.theme(
+    $white,
+    (
+      text-primary: black,
+      border-inverse: black,
+      background-brand: #3b3fb6,
+    )
+  );
 
-  --light-gray: #F2F4F8;
-  --brand-green: #51FFC4;
-  --brand-dark-green: #007D79;
+  --light-gray: #f2f4f8;
+  --brand-green: #51ffc4;
+  --brand-dark-green: #007d79;
 }
 
 * {
