@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Column, Button, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Logo from './graphics/Logo';
@@ -8,17 +7,7 @@ import Paper from '../Icons/paper.svg';
 
 import styles from './Leadspace.module.scss';
 
-type LeadspaceProps = {
-  onJoinCommunity: () => void;
-  onCheckLatestModel: () => void;
-  onReadPaper: () => void;
-};
-
-const Leadspace: FC<LeadspaceProps> = ({
-  onJoinCommunity,
-  onCheckLatestModel,
-  onReadPaper,
-}) => (
+const Leadspace = () => (
   <section className={styles.pane}>
     <Grid>
       <Column
@@ -32,18 +21,23 @@ const Leadspace: FC<LeadspaceProps> = ({
         <p className={styles.content__subhead}>
           A new community-based approach to build truly open-source LLMs
         </p>
-        <Button className={styles.action} onClick={onJoinCommunity}>
+        <Button href="https://github.com/instructlab" className={styles.action}>
           <GitHub className={styles.icon} />
-          <label>Join the community</label> <ArrowRight />
+          <span>Join the community</span> <ArrowRight />
         </Button>
-        <Button className={styles.action} onClick={onCheckLatestModel}>
+        <Button
+          href="https://huggingface.co/instructlab"
+          className={styles.action}
+        >
           <HuggingFace className={styles.icon} />
-          <label>Check out the latest model</label>
-          <ArrowRight />
+          <span>Check out the latest model</span> <ArrowRight />
         </Button>
-        <Button className={styles.action} onClick={onReadPaper}>
+        <Button
+          href="https://arxiv.org/abs/2403.01081"
+          className={styles.action}
+        >
           <Paper className={styles.icon} />
-          <label>Read the paper</label> <ArrowRight />
+          <span>Read the paper</span> <ArrowRight />
         </Button>
       </Column>
       <Column

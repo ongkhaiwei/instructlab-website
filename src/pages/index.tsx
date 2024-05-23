@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import PageShell from '../components/PageShell/PageShell';
 import Leadspace from '../components/Leadspace/Leadspace';
-import { useCallback } from 'react';
 import ReleaseCycle from '../components/ReleaseCycle/ReleaseCycle';
 import HowItWorks from '../components/HowItWorks/Slideshow';
 import StartExperimenting from '../components/StartExperimenting/StartExperimenting';
@@ -10,22 +9,6 @@ import Taxonomy from '../components/Taxonomy/Taxonomy';
 import styles from '../styles/main.module.scss';
 
 export default function Home() {
-  const handleJoinCommunity = useCallback(() => {
-    window.location.href = 'https://github.com/instructlab';
-  }, []);
-
-  const handleCheckLatestModel = useCallback(() => {
-    window.location.href = 'https://huggingface.co/instructlab';
-  }, []);
-
-  const handleStartExperimentingCtaClick = useCallback(() => {
-    window.location.href = 'https://github.com/instructlab';
-  }, []);
-
-  const handleReadPaper = useCallback(() => {
-    window.location.href = 'https://arxiv.org/abs/2403.01081';
-  }, []);
-
   return (
     <>
       <Head>
@@ -39,15 +22,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <PageShell>
-          <Leadspace
-            onJoinCommunity={handleJoinCommunity}
-            onCheckLatestModel={handleCheckLatestModel}
-            onReadPaper={handleReadPaper}
-          />
+          <Leadspace />
           <ReleaseCycle />
           <HowItWorks />
           <Taxonomy />
-          <StartExperimenting onCtaClicked={handleStartExperimentingCtaClick} />
+          <StartExperimenting />
         </PageShell>
       </main>
     </>

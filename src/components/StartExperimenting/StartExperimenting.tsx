@@ -1,6 +1,5 @@
 'use client';
 
-import { FC } from 'react';
 import { Button, Column, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import GitHub from '../Icons/github.svg';
@@ -36,11 +35,7 @@ export const headerAnimations = {
   },
 };
 
-type StartExperimentingProps = {
-  onCtaClicked: () => void;
-};
-
-const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
+const StartExperimenting = () => (
   <section className={styles.pane}>
     <Grid className={styles.grid}>
       <Column
@@ -67,9 +62,9 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
           outputs, and then contribute your skills recipes and knowledge sources
           back to the community.
         </p>
-        <Button className={styles.action} onClick={onCtaClicked}>
+        <Button href="https://github.com/instructlab" className={styles.action}>
           <GitHub className={styles.icon} />
-          <label>Join the community</label> <ArrowRight />
+          <span>Join the community</span> <ArrowRight />
         </Button>
       </Column>
     </Grid>
@@ -80,11 +75,12 @@ const StartExperimenting: FC<StartExperimentingProps> = ({ onCtaClicked }) => (
             <p>&copy; InstructLab</p>
 
             <p>
-              <a href="https://github.com/instructlab/">GitHub</a>&nbsp;|&nbsp;
+              <a href="https://github.com/instructlab/">GitHub</a>
+              {' | '}
               <a href="https://github.com/instructlab/community/blob/main/Collaboration.md">
                 Collaborate
               </a>
-              &nbsp;|&nbsp;
+              {' | '}
               <a href="https://github.com/instructlab/community/blob/main/CODE_OF_CONDUCT.md">
                 Code of Conduct
               </a>
