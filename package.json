@@ -18,14 +18,14 @@
     "next": "14.2.4",
     "react": "18.3.1",
     "react-animated-term": "^2.0.0",
-    "react-dom": "18.2.0",
+    "react-dom": "18.3.1",
     "react-intersection-observer": "^9.10.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "20.14.8",
     "@types/react": "18.3.3",
-    "@types/react-dom": "18.2.21",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.4",
