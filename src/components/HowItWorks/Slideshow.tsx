@@ -165,7 +165,7 @@ const Slideshow: FC<SlideshowProps> = () => {
           <div className={styles.slideshow__slides}>
             <div className={styles.cardWrapper}>
               {steps.map((d, i) => (
-                <div
+                <button
                   key={`howitworks_${i}`}
                   className={classNames(styles.stepWrapper, styles.column, {
                     [styles.active]: currentSlide === i,
@@ -186,7 +186,7 @@ const Slideshow: FC<SlideshowProps> = () => {
                     <div className={styles.order}>{Number(i) + 1}</div>
                     <div className={styles.description}>{d.description}</div>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
