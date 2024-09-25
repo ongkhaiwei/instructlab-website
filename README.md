@@ -1,19 +1,45 @@
-# instructlab
+# InstructLab
 
-InstructLAB website
+InstructLab website
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+#### Node
+
+Ensure you have `node` installed by running the command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+node -v
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you do not have `node` installed, install `node`: see [link](https://heynode.com/tutorial/install-nodejs-locally-nvm).
+
+#### Yarn
+
+Ensure you have `yarn` installed by running the command:
+
+```bash
+yarn -v
+```
+
+If you do not have `yarn` installed, intsall `yarn`: see [link](https://www.npmjs.com/package/yarn).
+
+### Setting up the local environment
+
+- Install the dependencies:
+
+```bash
+yarn install
+```
+
+- Run the development server:
+
+```bash
+yarn dev
+```
+
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
