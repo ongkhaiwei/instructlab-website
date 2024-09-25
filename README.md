@@ -30,16 +30,16 @@ If you do not have `yarn` installed, intsall `yarn`: see [link](https://www.npmj
 
 ### Setting up the local environment
 
-1. Install the dependencies:
+- Install the dependencies:
 
 ```bash
 yarn install
 ```
 
-2. Run the development server:
+- Run the development server:
 
 ```bash
 yarn dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
