@@ -39,6 +39,13 @@ const Leadspace = () => (
           <Paper className={styles.icon} />
           <span>Read the paper</span> <ArrowRight />
         </Button>
+        <Button
+          href="https://docs.instructlab.ai/"
+          className={styles.action}
+        >
+          <Paper className={styles.icon} />
+          <span>Read our documentation</span> <ArrowRight />
+        </Button>
       </Column>
       <Column
         className={styles.graphicsWrapper}
