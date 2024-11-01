@@ -1,10 +1,6 @@
 import Head from 'next/head';
 import PageShell from '../components/PageShell/PageShell';
 import Leadspace from '../components/Leadspace/Leadspace';
-import ReleaseCycle from '../components/ReleaseCycle/ReleaseCycle';
-import HowItWorks from '../components/HowItWorks/Slideshow';
-import StartExperimenting from '../components/StartExperimenting/StartExperimenting';
-import Taxonomy from '../components/Taxonomy/Taxonomy';
 
 import styles from '../styles/main.module.scss';
 
@@ -23,10 +19,6 @@ export default function Home() {
       <main className={styles.main}>
         <PageShell>
           <Leadspace />
-          <ReleaseCycle />
-          <HowItWorks />
-          <Taxonomy />
-          <StartExperimenting />
         </PageShell>
       </main>
     </>

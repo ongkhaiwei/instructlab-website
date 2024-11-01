@@ -1,10 +1,6 @@
 import { Column, Button, Grid } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Logo from './graphics/Logo';
-import GitHub from '../Icons/github.svg';
-import HuggingFace from '../Icons/hf.svg';
-import Paper from '../Icons/paper.svg';
-
 import styles from './Leadspace.module.scss';
 
 const Leadspace = () => (
@@ -17,31 +13,10 @@ const Leadspace = () => (
         md={{ span: 3 }}
         sm={{ span: 4 }}
       >
-        <h1 className={styles.content__header}>InstructLab</h1>
-        <p className={styles.content__subhead}>
-          A new community-based approach to build truly open-source LLMs
-        </p>
-        <Button href="https://github.com/instructlab" className={styles.action}>
-          <GitHub className={styles.icon} />
-          <span>Join the community</span> <ArrowRight />
-        </Button>
-        <Button
-          href="https://huggingface.co/instructlab"
-          className={styles.action}
-        >
-          <HuggingFace className={styles.icon} />
-          <span>Check out the latest model</span> <ArrowRight />
-        </Button>
-        <Button
-          href="https://arxiv.org/abs/2403.01081"
-          className={styles.action}
-        >
-          <Paper className={styles.icon} />
-          <span>Read the paper</span> <ArrowRight />
-        </Button>
-        <Button href="https://docs.instructlab.ai/" className={styles.action}>
-          <Paper className={styles.icon} />
-          <span>Read our documentation</span> <ArrowRight />
+        <h1 className={styles.content__header}>InstructLab Hackathon</h1>
+        <p className={styles.content__subhead}>Under Construction</p>
+        <Button href="https://instructlab.io" className={styles.action}>
+          <span>InstructLab official website</span> <ArrowRight />
         </Button>
       </Column>
       <Column
